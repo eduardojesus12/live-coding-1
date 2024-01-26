@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="styles/background.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" href="styles/ball.css" />
+        <title>Yes No API</title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+            <div class="clouds"></div>
+
+            <div class="interaction__container">
+                <input id="input" class="input" type="text" onkeypress="handleKeyEnter(event)" value="" required />
+                <span class="input__bar"></span>
+                <label>Ask Your Question</label>
+                <p id="error" class="error"></p>
+            </div>
+
+            <button id="button" type="submit" class="button">
+                Get Answer
+            </button>
+
+            <div id="ball" class="ball">
+                <div class="ball__response">
+                    <div class="ball__triangle"></div>
+                    <div id="answer" class="ball__answer"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

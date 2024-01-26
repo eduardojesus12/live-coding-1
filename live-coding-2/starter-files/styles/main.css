@@ -1,0 +1,126 @@
+* {
+    font-family: 'Audiowide', cursive;
+}
+
+body {
+    background-color: #0b132b;
+    font-size: 16px;
+    overflow-y: hidden;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.interaction__container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input {
+    font-size: 1.2rem;
+    padding: 10px 10px 10px 0px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+    color: white;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input ~ label {
+    position: absolute;
+    font-size: 1.4rem;
+    font-weight: 700;
+    top: -2.2rem;
+    left: 2rem;
+    color: white;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #3f04ca, 0 0 35px #3f04ca, 0 0 40px #3f04ca,
+        0 0 50px #3f04ca, 0 0 75px #3f04ca;
+}
+
+.input__bar {
+    position: relative;
+    display: block;
+    content: '';
+    height: 2px;
+    width: 100%;
+    bottom: 1px;
+    position: absolute;
+    background: white;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #3f04ca, 0 0 35px #3f04ca, 0 0 40px #3f04ca,
+        0 0 50px #3f04ca, 0 0 75px #3f04ca;
+}
+
+.input:focus ~ .input__bar:before,
+.input:focus ~ .input__bar:after {
+    width: 50%;
+}
+
+.input[type='text'] {
+    background: transparent;
+    border: none;
+}
+
+.button {
+    border: 0;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background: white;
+    color: black;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.button:hover {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 1px #3f04ca, 0 0 2px #3f04ca, 0 0 2px #3f04ca,
+        0 0 0px #3f04ca, 0 0 2px #3f04ca;
+}
+
+.button:disabled {
+    color: grey;
+    cursor: not-allowed;
+}
+
+.error {
+    position: absolute;
+    color: white;
+    margin: 0.3rem 0.8rem;
+}
+
+@media (max-width: 500px) {
+    .interaction__container {
+        margin-bottom: 1rem;
+    }
+
+    .input {
+        width: 200px;
+        font-size: 1rem;
+    }
+
+    .input ~ label {
+        font-size: 1rem;
+        top: -2.2rem;
+        left: 1.5rem;
+    }
+
+    .button {
+        padding: 0.6rem 0.8rem;
+        margin: 2rem 0;
+    }
+
+    .error {
+        margin: 0.3rem;
+        font-size: 0.7rem;
+    }
+}

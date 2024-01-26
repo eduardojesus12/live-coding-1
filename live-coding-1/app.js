@@ -1,4 +1,5 @@
-
+//Aldo Beltran
+//Mas logica de progrmacion y dominio de conceptos
 let miArray = ['insecto', 'bootcamp', 'mangos', 'reptil', 'mosca', 'escritorio', 'papel','cacahuates','pistaches','chicharon']
 const bocina = "bocina";
 
