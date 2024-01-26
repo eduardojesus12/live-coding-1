@@ -1,0 +1,128 @@
+.ball {
+    height: 400px;
+    width: 400px;
+    background: rgb(25, 25, 25);
+    border-radius: 100%;
+    position: relative;
+    box-shadow: inset -10px 10px 50px rgba(0, 0, 0, 0.4), inset 5px -5px 50px rgba(0, 0, 0, 1),
+        inset 50px -50px 200px rgba(0, 0, 0, 1), inset 0px -20px 20px rgba(60, 0, 60, 1),
+        inset -1px 2px 20px 4px #ffffff7a, 0 0 50px #ffffffa1, 0 0 30px 0px #3900bf8c;
+}
+
+.ball__response {
+    position: absolute;
+    background: linear-gradient(45deg, rgba(20, 0, 20, 1) 0%, rgba(40, 0, 20, 1) 100%);
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    border: solid 4px rgba(20, 20, 20, 0.8);
+    box-shadow: 10px -10px 10px rgba(20, 20, 20, 0.6), 10px -10px 1px rgba(20, 20, 20, 0.5),
+        -10px -10px 1px rgba(20, 20, 20, 0.5), 10px 10px 1px rgba(23, 20, 20, 0.5), -10px 10px 1px rgba(19, 17, 17, 0.5),
+        8px -10px 10px rgba(20, 20, 20, 0.6), -8px 10px 10px rgba(39, 39, 39, 0.6),
+        inset -10px 10px 40px rgba(200, 0, 20, 0.1), inset 10px -10px 40px rgba(20, 0, 200, 0.1);
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.ball__triangle {
+    -webkit-transform: translate(-50%, -50%) rotate(5deg);
+    transform: translate(-50%, -50%) rotate(5deg);
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    opacity: 0;
+}
+
+.ball__answer {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px black;
+    color: white;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%) rotate(5deg);
+    transform: translate(-50%, -50%) rotate(5deg);
+    position: absolute;
+    text-transform: uppercase;
+    width: 55px;
+    height: 60px;
+    left: 51%;
+    top: 52%;
+    opacity: 0;
+    transition: ease-in all 0.2s;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #3f04ca, 0 0 35px #3f04ca, 0 0 40px #3f04ca,
+        0 0 50px #3f04ca, 0 0 75px #3f04ca;
+}
+
+.ball .ball__answer {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: ease-in all 0.2s;
+}
+
+.ball .ball__triangle {
+    border-top: 90px solid #3f04ca;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+    transition: ease-in all 0.2s;
+}
+
+.shake__ball {
+    animation: shake 1s cubic-bezier(0.5, -0.75, 0.7, 2) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-5px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(10px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(5px, 0, 0);
+    }
+}
+
+@media (max-width: 500px) {
+    .ball {
+        height: 275px;
+        width: 275px;
+    }
+
+    .ball__response {
+        width: 110px;
+        height: 110px;
+    }
+
+    .ball__triangle {
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+    }
+
+    .ball__answer {
+        font-size: 0.8rem;
+        width: 30px;
+        height: 45px;
+    }
+    .ball .ball__triangle {
+        border-top: 50px solid #3f04ca;
+    }
+}
